@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>3D Model Viewer</title>
     <meta name="description" content="3D viewer for GLB model using modelviewer.dev" />
 
@@ -18,12 +18,17 @@
         background: #f5f6fa;
         color: #111;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        overflow: hidden;
+        overscroll-behavior: none;
       }
       model-viewer {
         width: 100vw;
         height: 100vh;
         display: block;
         background: #f5f6fa;
+      }
+      @supports (height: 100dvh) {
+        model-viewer { height: 100dvh; }
       }
       .fallback {
         position: absolute;
@@ -70,7 +75,7 @@
       camera-controls
       auto-rotate
       rotation-per-second="45deg/s"
-      touch-action="pan-y"
+      touch-action="none"
       shadow-intensity="1"
       exposure="1.15"
       environment-image="neutral"
