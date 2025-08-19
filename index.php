@@ -43,6 +43,7 @@
         overflow-x: auto;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
         z-index: 10;
+        flex-shrink: 0;
       }
 
       .controls-header {
@@ -194,6 +195,7 @@
         position: relative;
         background: #f8fafc;
         min-height: 0;
+        min-height: 50vh;
       }
 
       model-viewer {
@@ -232,52 +234,60 @@
       /* Responsive Design - Mobiel First */
       @media (max-width: 768px) {
         .configurator-controls {
-          padding: 12px;
+          padding: 8px;
+          max-height: 40vh;
+          overflow-y: auto;
+        }
+
+        .controls-header {
+          margin-bottom: 12px;
+          padding-bottom: 8px;
         }
 
         .controls-header h1 {
-          font-size: 18px;
+          font-size: 16px;
+          margin-bottom: 4px;
         }
 
         .controls-header p {
-          font-size: 12px;
+          font-size: 11px;
         }
 
         .controls-grid {
           grid-template-columns: 1fr;
-          gap: 12px;
+          gap: 8px;
         }
 
         .control-section {
-          padding: 12px;
+          padding: 8px;
         }
 
         .control-section h3 {
-          font-size: 13px;
-          margin-bottom: 10px;
+          font-size: 12px;
+          margin-bottom: 8px;
         }
 
         .color-options {
-          gap: 8px;
+          gap: 6px;
         }
 
         .color-option {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
         }
 
         .material-options {
-          gap: 8px;
+          gap: 6px;
         }
 
         .material-option {
-          padding: 8px;
-          font-size: 12px;
+          padding: 6px;
+          font-size: 11px;
         }
 
         .material-preview {
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
         }
 
         .price-display {
@@ -289,33 +299,46 @@
         .price-amount {
           font-size: 18px;
         }
+
+        /* Zorg ervoor dat de 3D viewer meer ruimte krijgt */
+        .viewer-container {
+          flex: 1.5;
+          min-height: 60vh;
+        }
       }
 
       @media (max-width: 480px) {
         .configurator-controls {
-          padding: 10px;
+          padding: 6px;
+          max-height: 35vh;
         }
 
         .controls-header {
-          margin-bottom: 16px;
+          margin-bottom: 8px;
         }
 
         .controls-header h1 {
-          font-size: 16px;
+          font-size: 14px;
         }
 
         .control-section {
-          padding: 10px;
+          padding: 6px;
         }
 
         .color-option {
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
         }
 
         .material-option {
-          padding: 6px;
-          font-size: 11px;
+          padding: 4px;
+          font-size: 10px;
+        }
+
+        /* Nog meer ruimte voor de 3D viewer op kleine schermen */
+        .viewer-container {
+          flex: 2;
+          min-height: 65vh;
         }
       }
 
