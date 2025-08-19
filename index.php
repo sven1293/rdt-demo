@@ -66,9 +66,9 @@
 
       .controls-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-        max-width: 1200px;
+        max-width: 800px;
         margin: 0 auto;
       }
 
@@ -101,7 +101,7 @@
       .color-options {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        gap: 6px;
         margin-bottom: 0;
       }
 
@@ -244,7 +244,7 @@
         }
 
         .controls-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
           gap: 12px;
         }
 
@@ -258,7 +258,7 @@
         }
 
         .color-options {
-          gap: 8px;
+          gap: 6px;
         }
 
         .color-option {
@@ -302,6 +302,11 @@
 
         .controls-header h1 {
           font-size: 16px;
+        }
+
+        .controls-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
         }
 
         .control-section {
