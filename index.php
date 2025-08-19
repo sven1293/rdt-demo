@@ -97,10 +97,10 @@
         border-radius: 2px;
       }
 
-      /* Color Picker Styling - 4 kleuren */
+      /* Color Picker Styling - 3 kleuren */
       .color-options {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 6px;
         margin-bottom: 0;
       }
@@ -423,7 +423,6 @@
             <div class="color-options">
               <div class="color-option active" data-color="#9fbbec" style="background: #9fbbec;"></div>
               <div class="color-option" data-color="#2F5597" style="background: #2F5597;"></div>
-              <div class="color-option" data-color="#8B4513" style="background: #8B4513;"></div>
               <div class="color-option" data-color="#654321" style="background: #654321;"></div>
             </div>
           </div>
@@ -432,13 +431,6 @@
           <div class="control-section">
             <h3>🔧 Materiaal</h3>
             <div class="material-options">
-              <div class="material-option" data-material="hout">
-                <div class="material-preview" style="background: linear-gradient(45deg, #8B4513, #A0522D);"></div>
-                <div class="material-info">
-                  <h4>Hout</h4>
-                  <p>Natuurlijk</p>
-                </div>
-              </div>
               <div class="material-option" data-material="glas">
                 <div class="material-preview" style="background: linear-gradient(45deg, #87CEEB, #B0E0E6);"></div>
                 <div class="material-info">
@@ -654,10 +646,9 @@
                       metallic = 0.95;
                       roughness = 0.15;
                       break;
-                    case 'hout':
                     default:
-                      metallic = 0.0;
-                      roughness = 0.9;
+                      metallic = 0.1;
+                      roughness = 0.8;
                       break;
                   }
 
@@ -705,7 +696,6 @@
             case 'metaal':
               price += 100;
               break;
-            case 'hout':
             default:
               price += 50;
               break;
