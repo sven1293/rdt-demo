@@ -39,7 +39,7 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 12px;
+        padding: 16px;
         overflow-x: auto;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
         z-index: 10;
@@ -47,52 +47,52 @@
 
       .controls-header {
         text-align: center;
-        margin-bottom: 16px;
-        padding-bottom: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
         border-bottom: 2px solid #e0e7ff;
       }
 
       .controls-header h1 {
         color: #4f46e5;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
       }
 
       .controls-header p {
         color: #6b7280;
-        font-size: 12px;
+        font-size: 13px;
       }
 
       .controls-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
         max-width: 1200px;
         margin: 0 auto;
       }
 
       .control-section {
         background: #f8fafc;
-        border-radius: 10px;
-        padding: 12px;
+        border-radius: 12px;
+        padding: 16px;
         border: 1px solid #e2e8f0;
       }
 
       .control-section h3 {
         color: #374151;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
       }
 
       .control-section h3::before {
         content: '';
-        width: 2px;
-        height: 14px;
+        width: 3px;
+        height: 16px;
         background: linear-gradient(135deg, #4f46e5, #7c3aed);
         border-radius: 2px;
       }
@@ -101,15 +101,15 @@
       .color-options {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
+        gap: 10px;
         margin-bottom: 0;
       }
 
       .color-option {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 3px solid #fff;
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -135,27 +135,27 @@
         color: white;
         font-weight: bold;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-        font-size: 12px;
+        font-size: 14px;
       }
 
       /* Materiaal Opties - Vereenvoudigd */
       .material-options {
         display: flex;
-        gap: 8px;
+        gap: 10px;
       }
 
       .material-option {
         flex: 1;
         display: flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px;
+        gap: 8px;
+        padding: 10px;
         background: white;
         border: 2px solid #e5e7eb;
-        border-radius: 6px;
+        border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
-        font-size: 12px;
+        font-size: 13px;
       }
 
       .material-option:hover {
@@ -169,21 +169,21 @@
       }
 
       .material-preview {
-        width: 20px;
-        height: 20px;
-        border-radius: 3px;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
         border: 1px solid #d1d5db;
       }
 
       .material-info h4 {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         color: #374151;
         margin: 0;
       }
 
       .material-info p {
-        font-size: 9px;
+        font-size: 10px;
         color: #6b7280;
         margin: 0;
       }
@@ -205,18 +205,18 @@
       /* Price Display */
       .price-display {
         position: absolute;
-        bottom: 12px;
-        left: 12px;
+        bottom: 16px;
+        left: 16px;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
-        padding: 10px 16px;
-        border-radius: 12px;
+        padding: 12px 20px;
+        border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .price-label {
-        font-size: 10px;
+        font-size: 11px;
         color: #6b7280;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -224,7 +224,7 @@
       }
 
       .price-amount {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 700;
         color: #059669;
       }
@@ -232,33 +232,80 @@
       /* Responsive Design - Mobiel First */
       @media (max-width: 768px) {
         .configurator-controls {
+          padding: 12px;
+        }
+
+        .controls-header h1 {
+          font-size: 18px;
+        }
+
+        .controls-header p {
+          font-size: 12px;
+        }
+
+        .controls-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .control-section {
+          padding: 12px;
+        }
+
+        .control-section h3 {
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+
+        .color-options {
+          gap: 8px;
+        }
+
+        .color-option {
+          width: 32px;
+          height: 32px;
+        }
+
+        .material-options {
+          gap: 8px;
+        }
+
+        .material-option {
+          padding: 8px;
+          font-size: 12px;
+        }
+
+        .material-preview {
+          width: 20px;
+          height: 20px;
+        }
+
+        .price-display {
+          bottom: 12px;
+          left: 12px;
+          padding: 10px 16px;
+        }
+
+        .price-amount {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .configurator-controls {
           padding: 10px;
+        }
+
+        .controls-header {
+          margin-bottom: 16px;
         }
 
         .controls-header h1 {
           font-size: 16px;
         }
 
-        .controls-header p {
-          font-size: 11px;
-        }
-
-        .controls-grid {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-
         .control-section {
           padding: 10px;
-        }
-
-        .control-section h3 {
-          font-size: 12px;
-          margin-bottom: 8px;
-        }
-
-        .color-options {
-          gap: 6px;
         }
 
         .color-option {
@@ -266,105 +313,9 @@
           height: 28px;
         }
 
-        .material-options {
-          gap: 6px;
-        }
-
         .material-option {
           padding: 6px;
           font-size: 11px;
-        }
-
-        .material-preview {
-          width: 18px;
-          height: 18px;
-        }
-
-        .price-display {
-          bottom: 10px;
-          left: 10px;
-          padding: 8px 14px;
-        }
-
-        .price-amount {
-          font-size: 16px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .configurator-controls {
-          padding: 8px;
-        }
-
-        .controls-header {
-          margin-bottom: 12px;
-        }
-
-        .controls-header h1 {
-          font-size: 15px;
-        }
-
-        .control-section {
-          padding: 8px;
-        }
-
-        .color-option {
-          width: 26px;
-          height: 26px;
-        }
-
-        .material-option {
-          padding: 5px;
-          font-size: 10px;
-        }
-
-        .material-preview {
-          width: 16px;
-          height: 16px;
-        }
-
-        .price-display {
-          bottom: 8px;
-          left: 8px;
-          padding: 6px 12px;
-        }
-
-        .price-amount {
-          font-size: 14px;
-        }
-      }
-
-      /* Extra kleine schermen (iPhone SE, etc.) */
-      @media (max-width: 375px) {
-        .configurator-controls {
-          padding: 6px;
-        }
-
-        .controls-header h1 {
-          font-size: 14px;
-        }
-
-        .controls-header p {
-          font-size: 10px;
-        }
-
-        .control-section {
-          padding: 6px;
-        }
-
-        .color-option {
-          width: 24px;
-          height: 24px;
-        }
-
-        .material-option {
-          padding: 4px;
-          font-size: 9px;
-        }
-
-        .material-preview {
-          width: 14px;
-          height: 14px;
         }
       }
 
@@ -518,9 +469,6 @@
           ar
           ar-modes="webxr scene-viewer"
           loading="eager"
-          camera-orbit="0deg 75deg 4m"
-          camera-target="0m 0m 0m"
-          field-of-view="45deg"
         >
           <div class="loading" id="loading-overlay">
             <div class="spinner"></div>
@@ -597,10 +545,6 @@
             }
           }, 100);
           
-          // Stel camera afstand in voor betere zichtbaarheid
-          this.viewer.cameraOrbit = '0deg 75deg 4m';
-          this.viewer.cameraTarget = '0m 0m 0m';
-          
           // Timeout voor het laden
           const loadingTimeout = setTimeout(() => {
             if (this.viewer && !this.viewer.model) {
@@ -623,10 +567,6 @@
             if (toggleBtn) {
               toggleBtn.classList.add('active');
             }
-            
-            // Stel camera afstand in na het laden
-            this.viewer.cameraOrbit = '0deg 75deg 4m';
-            this.viewer.cameraTarget = '0m 0m 0m';
           });
 
           this.viewer.addEventListener('error', (error) => {
