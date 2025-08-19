@@ -518,6 +518,9 @@
           ar
           ar-modes="webxr scene-viewer"
           loading="eager"
+          camera-orbit="0deg 75deg 4m"
+          camera-target="0m 0m 0m"
+          field-of-view="45deg"
         >
           <div class="loading" id="loading-overlay">
             <div class="spinner"></div>
@@ -594,6 +597,10 @@
             }
           }, 100);
           
+          // Stel camera afstand in voor betere zichtbaarheid
+          this.viewer.cameraOrbit = '0deg 75deg 4m';
+          this.viewer.cameraTarget = '0m 0m 0m';
+          
           // Timeout voor het laden
           const loadingTimeout = setTimeout(() => {
             if (this.viewer && !this.viewer.model) {
@@ -616,6 +623,10 @@
             if (toggleBtn) {
               toggleBtn.classList.add('active');
             }
+            
+            // Stel camera afstand in na het laden
+            this.viewer.cameraOrbit = '0deg 75deg 4m';
+            this.viewer.cameraTarget = '0m 0m 0m';
           });
 
           this.viewer.addEventListener('error', (error) => {
