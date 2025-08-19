@@ -28,78 +28,86 @@
       }
 
       .app-container {
-        display: grid;
-        grid-template-columns: 350px 1fr;
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         gap: 0;
       }
 
-      /* Sidebar Styling */
-      .configurator-sidebar {
+      /* Configurator Controls - Boven de 3D viewer */
+      .configurator-controls {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 24px;
-        overflow-y: auto;
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 16px;
+        overflow-x: auto;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        z-index: 10;
       }
 
-      .sidebar-header {
+      .controls-header {
         text-align: center;
-        margin-bottom: 32px;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
         border-bottom: 2px solid #e0e7ff;
       }
 
-      .sidebar-header h1 {
+      .controls-header h1 {
         color: #4f46e5;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
       }
 
-      .sidebar-header p {
+      .controls-header p {
         color: #6b7280;
-        font-size: 14px;
+        font-size: 13px;
       }
 
-      .config-section {
-        margin-bottom: 32px;
+      .controls-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .control-section {
         background: #f8fafc;
         border-radius: 12px;
-        padding: 20px;
+        padding: 16px;
         border: 1px solid #e2e8f0;
       }
 
-      .config-section h3 {
+      .control-section h3 {
         color: #374151;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
       }
 
-      .config-section h3::before {
+      .control-section h3::before {
         content: '';
-        width: 4px;
-        height: 20px;
+        width: 3px;
+        height: 16px;
         background: linear-gradient(135deg, #4f46e5, #7c3aed);
         border-radius: 2px;
       }
 
-      /* Color Picker Styling */
+      /* Color Picker Styling - 4 kleuren */
       .color-options {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin-bottom: 16px;
+        gap: 10px;
+        margin-bottom: 0;
       }
 
       .color-option {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         border: 3px solid #fff;
         cursor: pointer;
@@ -127,25 +135,27 @@
         color: white;
         font-weight: bold;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        font-size: 14px;
       }
 
-      /* Material Picker Styling */
+      /* Materiaal Opties - Vereenvoudigd */
       .material-options {
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        gap: 10px;
       }
 
       .material-option {
+        flex: 1;
         display: flex;
         align-items: center;
-        gap: 12px;
-        padding: 12px;
+        gap: 8px;
+        padding: 10px;
         background: white;
         border: 2px solid #e5e7eb;
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
+        font-size: 13px;
       }
 
       .material-option:hover {
@@ -159,126 +169,31 @@
       }
 
       .material-preview {
-        width: 32px;
-        height: 32px;
-        border-radius: 6px;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
         border: 1px solid #d1d5db;
       }
 
       .material-info h4 {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
         color: #374151;
-        margin-bottom: 4px;
+        margin: 0;
       }
 
       .material-info p {
-        font-size: 12px;
+        font-size: 10px;
         color: #6b7280;
-      }
-
-      /* Slider Styling */
-      .slider-group {
-        margin-bottom: 16px;
-      }
-
-      .slider-label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
-      }
-
-      .slider-label span {
-        font-size: 14px;
-        font-weight: 500;
-        color: #374151;
-      }
-
-      .slider-value {
-        font-size: 12px;
-        color: #6b7280;
-        background: #f3f4f6;
-        padding: 2px 8px;
-        border-radius: 12px;
-        min-width: 40px;
-        text-align: center;
-      }
-
-      .slider {
-        width: 100%;
-        height: 6px;
-        border-radius: 3px;
-        background: #e5e7eb;
-        outline: none;
-        -webkit-appearance: none;
-      }
-
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .slider::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
-        cursor: pointer;
-        border: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Button Styling */
-      .action-buttons {
-        display: flex;
-        gap: 12px;
-        margin-top: 24px;
-      }
-
-      .btn {
-        flex: 1;
-        padding: 12px 16px;
-        border: none;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
-        color: white;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
-      }
-
-      .btn-secondary {
-        background: #f3f4f6;
-        color: #374151;
-        border: 1px solid #d1d5db;
-      }
-
-      .btn-secondary:hover {
-        background: #e5e7eb;
+        margin: 0;
       }
 
       /* 3D Viewer Styling */
       .viewer-container {
+        flex: 1;
         position: relative;
         background: #f8fafc;
+        min-height: 0;
       }
 
       model-viewer {
@@ -290,40 +205,117 @@
       /* Price Display */
       .price-display {
         position: absolute;
-        bottom: 20px;
-        left: 20px;
+        bottom: 16px;
+        left: 16px;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
-        padding: 16px 24px;
+        padding: 12px 20px;
         border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .price-label {
-        font-size: 12px;
+        font-size: 11px;
         color: #6b7280;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        margin-bottom: 4px;
+        margin-bottom: 2px;
       }
 
       .price-amount {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         color: #059669;
       }
 
-      /* Responsive Design */
+      /* Responsive Design - Mobiel First */
       @media (max-width: 768px) {
-        .app-container {
-          grid-template-columns: 1fr;
-          grid-template-rows: auto 1fr;
+        .configurator-controls {
+          padding: 12px;
         }
-        
-        .configurator-sidebar {
-          max-height: 400px;
-          overflow-y: auto;
+
+        .controls-header h1 {
+          font-size: 18px;
+        }
+
+        .controls-header p {
+          font-size: 12px;
+        }
+
+        .controls-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .control-section {
+          padding: 12px;
+        }
+
+        .control-section h3 {
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+
+        .color-options {
+          gap: 8px;
+        }
+
+        .color-option {
+          width: 32px;
+          height: 32px;
+        }
+
+        .material-options {
+          gap: 8px;
+        }
+
+        .material-option {
+          padding: 8px;
+          font-size: 12px;
+        }
+
+        .material-preview {
+          width: 20px;
+          height: 20px;
+        }
+
+        .price-display {
+          bottom: 12px;
+          left: 12px;
+          padding: 10px 16px;
+        }
+
+        .price-amount {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .configurator-controls {
+          padding: 10px;
+        }
+
+        .controls-header {
+          margin-bottom: 16px;
+        }
+
+        .controls-header h1 {
+          font-size: 16px;
+        }
+
+        .control-section {
+          padding: 10px;
+        }
+
+        .color-option {
+          width: 28px;
+          height: 28px;
+        }
+
+        .material-option {
+          padding: 6px;
+          font-size: 11px;
         }
       }
 
@@ -412,107 +404,52 @@
   </head>
   <body>
     <div class="app-container">
-      <!-- Configurator Sidebar -->
-      <div class="configurator-sidebar">
-        <div class="sidebar-header">
+      <!-- Configurator Controls - Boven de 3D viewer -->
+      <div class="configurator-controls">
+        <div class="controls-header">
           <h1>Product Configurator</h1>
           <p>Stel je ideale product samen.</p>
         </div>
 
-        <!-- Kleur Sectie -->
-        <div class="config-section">
-          <h3>🎨 Kleur</h3>
-          <div class="color-options">
-            <div class="color-option active" data-color="#9fbbec" style="background: #9fbbec;"></div>
-            <div class="color-option" data-color="#2F5597" style="background: #2F5597;"></div>
-            <div class="color-option" data-color="#8B4513" style="background: #8B4513;"></div>
-            <div class="color-option" data-color="#654321" style="background: #654321;"></div>
-            <div class="color-option" data-color="#D2691E" style="background: #D2691E;"></div>
-            <div class="color-option" data-color="#F5DEB3" style="background: #F5DEB3;"></div>
-            <div class="color-option" data-color="#2F4F4F" style="background: #2F4F4F;"></div>
-            <div class="color-option" data-color="#8B0000" style="background: #8B0000;"></div>
-            <div class="color-option" data-color="#228B22" style="background: #228B22;"></div>
-            <div class="color-option" data-color="#4169E1" style="background: #4169E1;"></div>
+        <div class="controls-grid">
+          <!-- Kleur Sectie -->
+          <div class="control-section">
+            <h3>🎨 Kleur</h3>
+            <div class="color-options">
+              <div class="color-option active" data-color="#9fbbec" style="background: #9fbbec;"></div>
+              <div class="color-option" data-color="#2F5597" style="background: #2F5597;"></div>
+              <div class="color-option" data-color="#8B4513" style="background: #8B4513;"></div>
+              <div class="color-option" data-color="#654321" style="background: #654321;"></div>
+            </div>
           </div>
-        </div>
 
-        <!-- Materiaal Sectie -->
-        <div class="config-section">
-          <h3>🔧 Materiaal</h3>
-          <div class="material-options">
-            <div class="material-option" data-material="hout">
-              <div class="material-preview" style="background: linear-gradient(45deg, #8B4513, #A0522D);"></div>
-              <div class="material-info">
-                <h4>Natuurhout</h4>
-                <p>Klassiek en warm</p>
+          <!-- Materiaal Sectie -->
+          <div class="control-section">
+            <h3>🔧 Materiaal</h3>
+            <div class="material-options">
+              <div class="material-option" data-material="hout">
+                <div class="material-preview" style="background: linear-gradient(45deg, #8B4513, #A0522D);"></div>
+                <div class="material-info">
+                  <h4>Hout</h4>
+                  <p>Natuurlijk</p>
+                </div>
               </div>
-            </div>
-            <div class="material-option" data-material="glas">
-              <div class="material-preview" style="background: linear-gradient(45deg, #87CEEB, #B0E0E6);"></div>
-              <div class="material-info">
-                <h4>Glas</h4>
-                <p>Modern en elegant</p>
+              <div class="material-option" data-material="glas">
+                <div class="material-preview" style="background: linear-gradient(45deg, #87CEEB, #B0E0E6);"></div>
+                <div class="material-info">
+                  <h4>Glas</h4>
+                  <p>Modern</p>
+                </div>
               </div>
-            </div>
-            <div class="material-option active" data-material="metaal">
-              <div class="material-preview" style="background: linear-gradient(45deg, #C0C0C0, #A9A9A9);"></div>
-              <div class="material-info">
-                <h4>Metaal</h4>
-                <p>Industrieel en sterk</p>
+              <div class="material-option active" data-material="metaal">
+                <div class="material-preview" style="background: linear-gradient(45deg, #C0C0C0, #A9A9A9);"></div>
+                <div class="material-info">
+                  <h4>Metaal</h4>
+                  <p>Industrieel</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Afmetingen Sectie -->
-        <div class="config-section">
-          <h3>📏 Afmetingen</h3>
-          <div class="slider-group">
-            <div class="slider-label">
-              <span>Lengte</span>
-              <span class="slider-value" id="length-value">120 cm</span>
-            </div>
-            <input type="range" class="slider" id="length-slider" min="80" max="200" value="120" step="10">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label">
-              <span>Breedte</span>
-              <span class="slider-value" id="width-value">80 cm</span>
-            </div>
-            <input type="range" class="slider" id="width-slider" min="60" max="120" value="80" step="10">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label">
-              <span>Hoogte</span>
-              <span class="slider-value" id="height-value">75 cm</span>
-            </div>
-            <input type="range" class="slider" id="height-slider" min="60" max="90" value="75" step="5">
-          </div>
-        </div>
-
-        <!-- Finishing Sectie -->
-        <div class="config-section">
-          <h3>✨ Afwerking</h3>
-          <div class="slider-group">
-            <div class="slider-label">
-              <span>Glans</span>
-              <span class="slider-value" id="gloss-value">50%</span>
-            </div>
-            <input type="range" class="slider" id="gloss-slider" min="0" max="100" value="50" step="5">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label">
-              <span>Textuur</span>
-              <span class="slider-value" id="texture-value">30%</span>
-            </div>
-            <input type="range" class="slider" id="texture-slider" min="0" max="100" value="30" step="5">
-          </div>
-        </div>
-
-        <!-- Actie Knoppen -->
-        <div class="action-buttons">
-          <button class="btn btn-secondary" id="reset-config">Reset</button>
-          <button class="btn btn-primary" id="save-config">Opslaan</button>
         </div>
       </div>
 
@@ -559,12 +496,7 @@
           this.viewer = null;
           this.currentConfig = {
             color: '#9fbbec',
-            material: 'metaal',
-            length: 120,
-            width: 80,
-            height: 75,
-            gloss: 50,
-            texture: 30
+            material: 'metaal'
           };
           this.basePrice = 599;
           this.init();
@@ -683,36 +615,6 @@
               }, 50);
             });
           });
-
-          // Sliders
-          const sliders = ['length', 'width', 'height', 'gloss', 'texture'];
-          sliders.forEach(sliderName => {
-            const slider = document.getElementById(`${sliderName}-slider`);
-            const valueDisplay = document.getElementById(`${sliderName}-value`);
-            
-            slider.addEventListener('input', (e) => {
-              const value = parseInt(e.target.value);
-              this.currentConfig[sliderName] = value;
-              
-              // Update display
-              if (sliderName === 'gloss' || sliderName === 'texture') {
-                valueDisplay.textContent = `${value}%`;
-              } else {
-                valueDisplay.textContent = `${value} cm`;
-              }
-              
-              this.applyConfiguration();
-            });
-          });
-
-          // Actie knoppen
-          document.getElementById('reset-config').addEventListener('click', () => {
-            this.resetConfiguration();
-          });
-
-          document.getElementById('save-config').addEventListener('click', () => {
-            this.saveConfiguration();
-          });
         }
 
         applyConfiguration() {
@@ -737,45 +639,21 @@
                   // Materiaal eigenschappen toepassen - verbeterde logica
                   let metallic = 0.1;
                   let roughness = 0.8;
-                  let clearcoat = 0.0;
-                  let clearcoatRoughness = 0.0;
 
                   switch (this.currentConfig.material) {
                     case 'glas':
                       metallic = 0.0;
                       roughness = 0.05;
-                      clearcoat = 0.8;
-                      clearcoatRoughness = 0.1;
                       break;
                     case 'metaal':
                       metallic = 0.95;
                       roughness = 0.15;
-                      clearcoat = 0.3;
-                      clearcoatRoughness = 0.2;
                       break;
                     case 'hout':
                     default:
                       metallic = 0.0;
                       roughness = 0.9;
-                      clearcoat = 0.0;
-                      clearcoatRoughness = 0.0;
                       break;
-                  }
-
-                  // Glans en textuur toepassen met verbeterde berekening
-                  const glossFactor = this.currentConfig.gloss / 100;
-                  const textureFactor = this.currentConfig.texture / 100;
-                  
-                  // Pas roughness aan op basis van glans en textuur
-                  if (this.currentConfig.material === 'glas') {
-                    // Voor glas: glans heeft meer effect
-                    roughness = Math.max(0.01, Math.min(0.1, roughness + (textureFactor * 0.05) - (glossFactor * 0.04)));
-                  } else if (this.currentConfig.material === 'metaal') {
-                    // Voor metaal: balans tussen glans en textuur
-                    roughness = Math.max(0.05, Math.min(0.3, roughness + (textureFactor * 0.15) - (glossFactor * 0.1)));
-                  } else {
-                    // Voor hout: natuurlijke textuur behouden
-                    roughness = Math.max(0.7, Math.min(1.0, roughness + (textureFactor * 0.2) - (glossFactor * 0.15)));
                   }
 
                   // Pas eigenschappen toe met fallback
@@ -790,14 +668,6 @@
                       pbr.setRoughnessFactor(roughness);
                     } else {
                       pbr.roughnessFactor = roughness;
-                    }
-
-                    // Clearcoat toepassen als het beschikbaar is (voor glas effect)
-                    if (material.clearcoat !== undefined) {
-                      material.clearcoat.setFactor(clearcoat);
-                    }
-                    if (material.clearcoatRoughness !== undefined) {
-                      material.clearcoatRoughness.setFactor(clearcoatRoughness);
                     }
                   } catch (e) {
                     console.warn('Kon niet alle materiaal eigenschappen toepassen:', e);
@@ -836,54 +706,7 @@
               break;
           }
 
-          // Afmetingen kosten
-          const sizeMultiplier = (this.currentConfig.length * this.currentConfig.width) / 9600; // 120 * 80 = 9600
-          price = Math.round(price * sizeMultiplier);
-
-          // Afwerking kosten
-          if (this.currentConfig.gloss > 70) price += 75;
-          if (this.currentConfig.texture > 50) price += 50;
-
           document.getElementById('total-price').textContent = `€ ${price}`;
-        }
-
-        resetConfiguration() {
-          this.currentConfig = {
-            color: '#9fbbec',
-            material: 'metaal',
-            length: 120,
-            width: 80,
-            height: 75,
-            gloss: 50,
-            texture: 30
-          };
-
-          // Reset UI
-          document.querySelectorAll('.color-option').forEach((opt, index) => {
-            opt.classList.toggle('active', index === 0);
-          });
-
-          document.querySelectorAll('.material-option').forEach((opt, index) => {
-            opt.classList.toggle('active', index === 2);
-          });
-
-          // Reset sliders
-          const sliders = ['length', 'width', 'height', 'gloss', 'texture'];
-          const defaultValues = [120, 80, 75, 50, 30];
-          
-          sliders.forEach((sliderName, index) => {
-            const slider = document.getElementById(`${sliderName}-slider`);
-            const valueDisplay = document.getElementById(`${sliderName}-value`);
-            
-            slider.value = defaultValues[index];
-            if (sliderName === 'gloss' || sliderName === 'texture') {
-              valueDisplay.textContent = `${defaultValues[index]}%`;
-            } else {
-              valueDisplay.textContent = `${defaultValues[index]} cm`;
-            }
-          });
-
-          this.applyConfiguration();
         }
 
         saveConfiguration() {
